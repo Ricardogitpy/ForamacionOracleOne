@@ -7,6 +7,13 @@
         document.write("<br>");
     }
 
+    //funcion con parametros
+
+    function imprimir(anhoActual,anhoNacimiento, nombre){
+        document.write(nombre +" tiene: " + (anhoActual - anhoNacimiento) + " años");
+        saltodelinea(); //funcion anidada
+    }
+
 
     //uso de variables
     var edad = 25, meses = 12, dias = 30, horas = 24;
@@ -24,20 +31,15 @@
 
     saltodelinea(); //llamada a la funcion
 
-    document.write("jimena tiene: " + (anho - 1995) + " años");
+    imprimir(anho, 1995, "jimena"); //llamada a la funcion con parametros
     
-    saltodelinea();
-
-    document.write("itzel tiene: " + (anho - 1997) + " años");
+    imprimir(anho, 1997, "itzel"); //llamada a la funcion con parametros
     
-    saltodelinea();
-
     // revalidar el valor de la variable anho
     anho = 2024;
 
-    document.write("jose tiene: " + (anho - 1998) + " años");
+    imprimir(anho, 1998, "jose"); //llamada a la funcion con parametros 
     
-    saltodelinea();
 
     var promedio = ((anho - 1995) + (anho - 1997) + (anho - 1998)) / 3;
 
