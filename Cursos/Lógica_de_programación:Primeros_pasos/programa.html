@@ -6,10 +6,36 @@
 
     document.write("la edad de Christian es ....<br>");
     document.write("?<br>");
-    document.write("25"+"años"); //concatenación
+    document.write("25"+" años"); //concatenación
     //concatenación numero + texto
     document.write("<br> el nacio en el año 1995 por lo que a vivido " + (edad * meses) +" meses"); //operaciones
     document.write("<br> el nacio en el año 1995 por lo que a vivido " + (edad * meses * dias) +" dias"); //operaciones
     document.write("<br> el nacio en el año 1995 por lo que a vivido " + (edad * meses * dias * horas) +" horas"); //operaciones
+
+    //calculo de edad
+    var anho = 2023;
+
+    document.write("<br>");
+    document.write("<br>");
+
+    document.write("jimena tiene: " + (anho - 1995) + " años");
+    document.write("<br>");
+    document.write("<br>");
+
+    document.write("itzel tiene: " + (anho - 1997) + " años");
+    document.write("<br>");
+    document.write("<br>");
+
+    // revalidar el valor de la variable anho
+    anho = 2024;
+
+    document.write("jose tiene: " + (anho - 1998) + " años");
+    document.write("<br>");
+    document.write("<br>");
+
+    var promedio = ((anho - 1995) + (anho - 1997) + (anho - 1998)) / 3;
+
+    document.write("el promedio de edad es: " + Math.round(promedio) + " años");
+
 
 </script>
