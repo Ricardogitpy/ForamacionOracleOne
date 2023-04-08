@@ -21,21 +21,11 @@
         return imc;
  
     }
+    var nombre = prompt("¿Cuál es tu nombre?"); //prompt es una función que permite ingresar datos
+    var peso = prompt("¿Cuál es tu peso?");
+    var altura = prompt("¿Cuál es tu altura?");
+    var imc1 = calcularIMC(peso, altura);
 
-    var pesoRicardo = 86;
-    var alturaRicardo = 1.75;
-    var imc1 = calcularIMC(pesoRicardo, alturaRicardo);
-
-
-    
-    var pesoAna = 60;
-    var alturaAna = 1.70;
-    var imc2 = calcularIMC(pesoAna, alturaAna);
-
-    imprimir("IMC de Ricardo: " + imc1);
-    imprimir("IMC de Ana: " + imc2);
-
-    var promedio = (imc1 + imc2) / 2;
-    imprimir("Promedio de IMC: " + promedio);
+    imprimir("IMC de "+nombre+" es: " + imc1);
 
 </script>
