@@ -1,0 +1,25 @@
+<meta charset="UTF-8"> 
+<h3>años de diferenicia</h3>
+<br>
+<script>
+
+    function saltarlinea(){
+        document.write("<br>");
+        document.write("<br>");
+    }
+
+    function imprimir(edad1,edad2){
+        var diferencia = edad1 - edad2;
+        document.write("la diferencia de edad es: " + diferencia + " años");
+        saltarlinea();
+    }
+
+    var edad1 = 25;
+    var edad2 = 30;
+
+    document.write("la edad del hermano 1 es: <br>" + edad1 +"<br>");
+    document.write("<br>la edad del hermano 2 es: <br>" + edad2 +"<br>");
+
+    imprimir(edad1,edad2);
+
+</script>    
