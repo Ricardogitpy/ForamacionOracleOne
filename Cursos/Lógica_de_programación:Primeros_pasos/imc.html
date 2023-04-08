@@ -15,22 +15,27 @@
         saltarLinea();
     }
     
-    function calcularIMC(peso, altura,nombre) {
+    function calcularIMC(peso, altura) {
         var imc = peso / (altura * altura);
 
-        imprimir("El IMC de "+ nombre +" es: " + imc);
+        return imc;
  
     }
 
     var pesoRicardo = 86;
     var alturaRicardo = 1.75;
-    calcularIMC(pesoRicardo, alturaRicardo, "Ricardo");
+    var imc1 = calcularIMC(pesoRicardo, alturaRicardo);
 
 
     
     var pesoAna = 60;
     var alturaAna = 1.70;
-    calcularIMC(pesoAna, alturaAna, "Ana");
+    var imc2 = calcularIMC(pesoAna, alturaAna);
 
+    imprimir("IMC de Ricardo: " + imc1);
+    imprimir("IMC de Ana: " + imc2);
+
+    var promedio = (imc1 + imc2) / 2;
+    imprimir("Promedio de IMC: " + promedio);
 
 </script>
