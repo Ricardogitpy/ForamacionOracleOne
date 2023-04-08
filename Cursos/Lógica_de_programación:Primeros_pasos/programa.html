@@ -1,6 +1,13 @@
 <meta charset="UTF-8">
 
 <script>
+    //añadir funciones
+    function saltodelinea() {
+        document.write("<br>");
+        document.write("<br>");
+    }
+
+
     //uso de variables
     var edad = 25, meses = 12, dias = 30, horas = 24;
 
@@ -15,27 +22,26 @@
     //calculo de edad
     var anho = 2023;
 
-    document.write("<br>");
-    document.write("<br>");
+    saltodelinea(); //llamada a la funcion
 
     document.write("jimena tiene: " + (anho - 1995) + " años");
-    document.write("<br>");
-    document.write("<br>");
+    
+    saltodelinea();
 
     document.write("itzel tiene: " + (anho - 1997) + " años");
-    document.write("<br>");
-    document.write("<br>");
+    
+    saltodelinea();
 
     // revalidar el valor de la variable anho
     anho = 2024;
 
     document.write("jose tiene: " + (anho - 1998) + " años");
-    document.write("<br>");
-    document.write("<br>");
+    
+    saltodelinea();
 
     var promedio = ((anho - 1995) + (anho - 1997) + (anho - 1998)) / 3;
 
-    document.write("el promedio de edad es: " + Math.round(promedio) + " años");
+    document.write("el promedio de edad es: " + Math.round(promedio) + " años"); //redondeo de numero decimal a entero con Math.round()
 
 
 </script>
