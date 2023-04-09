@@ -1,0 +1,26 @@
+<meta charset="UTF-8">
+
+<h1>PROGRAMA Tablas de multiplicar</h1>
+
+<script>
+    function saltarLinea() {
+        document.write("<br>");    
+        document.write("<br>");    
+        document.write("<br>");
+        document.write("<hr>"); 
+    }
+
+    function imprimir(frase) {
+        document.write("<big>"+frase+"</big>");
+        saltarLinea();
+    }
+
+    var numero = parseInt(prompt("¿Qué tabla de multiplicar quieres ver?"));
+
+    // for es un ciclo que permite repetir un bloque de código un número determinado de veces
+    for (var i = 1; i <= 10; i++) {
+        imprimir(numero+" x "+i+" = "+(numero*i));
+    }
+
+
+</script>
