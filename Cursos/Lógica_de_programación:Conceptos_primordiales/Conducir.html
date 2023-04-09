@@ -1,0 +1,29 @@
+<meta charset="UTF-8">
+
+<script>
+    function saltarLinea() {
+        document.write("<br>");
+    }
+
+    function imprimir(frase) {
+        document.write(frase);
+        saltarLinea();
+    }
+
+    // Función que evalúa si una persona puede conducir
+
+    function puedeConducir(edad, tieneLicencia) {
+        // && es un operador lógico que permite evaluar más de una condición
+        if (edad >= 18 && tieneLicencia == "S") {
+            document.write("Puede conducir");
+        } else {
+            document.write("No puede conducir");
+        }
+    }
+
+    var edad = parseInt(prompt("¿Cuál es tu edad?"));
+    var tieneLicencia = prompt("¿Tienes licencia? Responde S o N");
+
+    puedeConducir(edad, tieneLicencia);
+
+</script>
