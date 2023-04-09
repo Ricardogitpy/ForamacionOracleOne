@@ -1,0 +1,27 @@
+<meta charset="UTF-8"> 
+<h1>Juego de la adivinansa</h1>
+ 
+<script>
+
+    function saltarLinea() {
+        document.write("<br>");    
+        document.write("<br>");    
+        document.write("<br>"); 
+    }
+
+    function imprimir(frase) {
+        document.write("<big>"+frase+"</big>");
+        saltarLinea();
+    }
+
+    var numeroPensado = Math.floor(Math.random() * 10) + 1; //Math.floor es una función que permite redondear un número hacia abajo, Math.random es una función que permite generar un número aleatorio entre 0 y 1
+    var numeroUsuario = parseInt(prompt("Adivina el número que estoy pensando (del 1 al 10)")); //parseInt es una función que permite convertir un string a un número
+
+    if (numeroUsuario == numeroPensado){
+        imprimir("¡Felicidades! Adivinaste el número");
+    }
+    else {
+        imprimir("Lo siento, no adivinaste el número el número era: "+numeroPensado);
+    }
+
+</script>  
