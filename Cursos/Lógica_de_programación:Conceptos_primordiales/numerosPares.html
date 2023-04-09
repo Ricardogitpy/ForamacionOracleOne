@@ -1,0 +1,35 @@
+<meta charset="UTF-8">
+
+<h1>PROGRAMA NUMEROS PARES DEL 0 AL 100</h1>
+
+<script>
+    function saltarLinea() {
+        document.write("<br>");    
+        document.write("<br>");    
+        document.write("<br>");
+        document.write("<hr>"); 
+    }
+
+    function imprimir(frase) {
+        document.write("<big>"+frase+"</big>");
+        saltarLinea();
+    }
+
+    //funcion que devuelve true si el numero es par
+
+    function numeroPar(numero) {
+        if (numero % 2 == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    //imprimir los numeros pares del 0 al 100
+    for (var i = 0; i <= 100; i++) {
+        if (numeroPar(i)) {
+            imprimir(i);
+        }
+    }
+
+</script>
