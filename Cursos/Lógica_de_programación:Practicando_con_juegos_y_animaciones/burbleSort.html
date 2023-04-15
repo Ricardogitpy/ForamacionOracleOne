@@ -1,0 +1,142 @@
+<canvas width="400" height="625" style="background-color: black;"></canvas>
+<script>
+
+    var burbujaActual = 0;
+    var canvas = document.querySelector('canvas');
+    var ctx = canvas.getContext('2d');
+
+    function dibujarBurbuja(canvas, diametro, x, y) {
+        // Obtenemos el contexto de dibujo del canvas
+
+          // Calculamos el radio de la burbuja a partir del diámetro
+          var radio = diametro / 2;
+
+          // Dibujamos la burbuja
+          var gradiente = ctx.createRadialGradient(
+            x + radio, y + radio, 0,
+            x + radio, y + radio, radio
+          );
+          gradiente.addColorStop(0, '#FFFFFF');
+          gradiente.addColorStop(1, '#88CCEE');
+
+          ctx.beginPath();
+          ctx.arc(x + radio, y + radio, radio, 0, Math.PI * 2, true);
+          ctx.fillStyle = gradiente;
+          ctx.fill();
+          ctx.closePath();
+
+          // Agregamos sombras y brillo
+          ctx.beginPath();
+          ctx.arc(x + radio - radio / 3, y + radio - radio / 3, radio / 2, 0, Math.PI * 2, false);
+          ctx.fillStyle = '#FFFFFF';
+          ctx.globalAlpha = 0.2;
+          ctx.fill();
+          ctx.closePath();
+
+          ctx.beginPath();
+          ctx.arc(x + radio + radio / 3, y + radio - radio / 3, radio / 3, 0, Math.PI * 2, false);
+          ctx.fillStyle = '#FFFFFF';
+          ctx.globalAlpha = 0.2;
+          ctx.fill();
+          ctx.closePath();
+
+          ctx.beginPath();
+          ctx.arc(x + radio, y + radio + radio / 2, radio / 2, 0, Math.PI * 2, false);
+          ctx.fillStyle = '#FFFFFF';
+          ctx.globalAlpha = 0.2;
+          ctx.fill();
+          ctx.closePath();
+
+          ctx.beginPath();
+          ctx.arc(x + radio, y + radio, radio / 5, 0, Math.PI * 2, false);
+          ctx.fillStyle = '#FFFFFF';
+          ctx.globalAlpha = 0.5;
+          ctx.fill();
+          ctx.closePath();
+    }
+
+    var numBurbujas = 8
+    var diametroMinimo = 20;
+    var diametroMaximo = 70;
+    var espacioEntreBurbujas = 5;
+    var totalAlturaBurbujas = numBurbujas * diametroMaximo + (numBurbujas - 1) * espacioEntreBurbujas;
+    var margenSuperior = (canvas.height - totalAlturaBurbujas) / 2;
+
+    var burbujas = [ ];
+    var diametrosUtilizados = [];
+
+    for (var i = 0; i < numBurbujas; i++) {
+        var diametro;
+        do {
+            diametro = Math.floor(Math.random() * (diametroMaximo - diametroMinimo + 1)) + diametroMinimo;
+        } while (diametrosUtilizados.includes(diametro));
+        diametrosUtilizados.push(diametro);
+
+        var y = margenSuperior + (diametroMaximo + espacioEntreBurbujas) * i;
+        area = diametro * diametro * 3.14;
+        burbujas.push({
+            diametro: diametro,
+            x: 150,
+            y: y,
+            area: area
+        });
+    }
+
+    var areas = burbujas.map(function(burbuja) {
+        return {area: burbuja.area};
+    });
+
+    console.log(areas);
+
+    function dibujarBurbujas(){
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (var i = 0; i < burbujas.length; i++) {
+            dibujarBurbuja(canvas, burbujas[i].diametro, burbujas[i].x, burbujas[i].y);
+            // if (i === burbujaActual && burbujas[i]) { // Si es la burbuja que se está ordenando
+            //     ctx.beginPath();
+            //     ctx.arc(burbujas[i].x + burbujas[i].diametro / 2, burbujas[i].y + burbujas[i].diametro / 2, burbujas[i].diametro / 2, 0, Math.PI * 2, true);
+            //     ctx.lineWidth = 5;
+            //     ctx.strokeStyle = "#FF0000";
+            //     ctx.stroke();
+            //     ctx.closePath();
+            // }
+        }
+    }
+
+
+    function ordenamientoBurbuja(){
+        var i = 0;
+        var j = burbujas.length - 1;
+        var interval = setInterval(function(){
+            if (i < j){
+                if (burbujas[i].area > burbujas[i + 1].area){
+                    var aux = burbujas[i];
+                    burbujas[i] = burbujas[i + 1];
+                    burbujas[i + 1] = aux;
+
+                    var aux2 = burbujas[i].y;
+                    burbujas[i].y = burbujas[i + 1].y;
+                    burbujas[i + 1].y = aux2;
+
+                    burbujaActual = i + 1; // Actualizamos la burbuja actual
+                }
+                i++;
+            } else {
+                i = 0;
+                j--;
+            }
+            dibujarBurbujas();
+            if (j == 0){
+                var areas = burbujas.map(function(burbuja) {
+                    return {area: burbuja.area};
+                });
+                console.log(areas);
+                clearInterval(interval);
+            }
+        }, 500);
+    }
+
+    
+    ordenamientoBurbuja();
+
+</script>

@@ -1,0 +1,50 @@
+<canvas height="900" width="900"></canvas>
+<script>
+    // Crear el canvas
+var canvas = document.querySelector("canvas");
+var ctx = canvas.getContext("2d");
+
+// Crear el array de valores aleatorios
+var array = [];
+for (var i = 0; i < 50; i++) {
+  array.push(Math.floor(Math.random() * 100));
+}
+
+// Función para dibujar el array en el canvas
+function drawArray() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  for (var i = 0; i < array.length; i++) {
+    var height = array[i] * 5;
+    var x = i * 15;
+    var y = canvas.height - height;
+    ctx.fillStyle = "rgb(" + array[i] + ", 0, 0)";
+    ctx.fillRect(x, y, 10, height);
+  }
+}
+
+// Función para implementar el algoritmo de burbuja
+function bubbleSort() {
+  var i = 0;
+  var j = array.length - 1;
+  var interval = setInterval(function() {
+    if (i < j) {
+      if (array[i] > array[i + 1]) {
+        var temp = array[i];
+        array[i] = array[i + 1];
+        array[i + 1] = temp;
+      }
+      i++;
+    } else {
+      j--;
+      i = 0;
+    }
+    drawArray();
+    if (j == 0) {
+      clearInterval(interval);
+    }
+  }, 50);
+}
+
+// Iniciar la animación llamando a la función de burbuja
+bubbleSort();
+</script>
