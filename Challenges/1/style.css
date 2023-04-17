@@ -4,8 +4,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
   }
-  
-  
+   
   div {
     margin: 50px auto;
     max-width: 600px;
@@ -127,23 +126,20 @@ body {
     position: relative;
   }
 
-  .salida::placeholder {
+  .salida::-webkit-input-placeholder {
     color: transparent;
-  }
-  
-  .placeholder {
+    background: url("success.png") no-repeat center/contain;
+    width: 80%;
+    height: 80%;
+    opacity: 0.85;
+    user-select: none;
+    pointer-events: none;
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 60%;
     transform: translate(-50%, -50%);
-    width: 60px;
-    height: 60px;
-    opacity: 0.5;
-  }
+    }
   
-  .salida:not(:placeholder-shown) + .placeholder {
-    display: none;
-  }
   .copiar {
     background-color: #FFFFFF;
     color: #0A3871;
