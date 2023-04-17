@@ -8,8 +8,8 @@
     <title>Document</title>
 </head>
 <body>
-    <div>
-        <di class="container">
+    <div class="uno">
+        <div class="container">
             <h1>Encriptador</h1>
             <textarea class="entrada" pattern="[A-Za-z]"  placeholder="Ingrese su texto aquí..."></textarea>
         
@@ -18,8 +18,21 @@
         </div>
         <div class="container_salida">
             <textarea class="salida"></textarea>
+            <img class="placeholder" src="success.png" alt="placeholder">
             <button class="copiar">copiar</button>
         </div>
     </div>
 </body>
+<script>
+    const salida = document.querySelector('.salida');
+    const placeholder = document.querySelector('.placeholder');
+
+    salida.addEventListener('input', () => {
+        if (salida.value === '') {
+            placeholder.style.display = 'block';
+        } else {
+            placeholder.style.display = 'none';
+        }
+    });
+</script>
 </html>
