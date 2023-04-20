@@ -9,7 +9,11 @@ var pincel = pantalla.getContext("2d");
 pincel.fillStyle = "grey"
 pincel.fillRect(0, 0, 600, 400);
 
-alert("usted hizo un clik")
+function exibiralerta() {
+    alert("usted hizo click");
 
+}
+
+pantalla.onclick = exibiralerta; //onclick es un evento que se ejecuta cuando se hace click en el canvas
 
 </script>
