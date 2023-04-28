@@ -12,27 +12,15 @@
         <div class="container">
             <h1>Encriptador</h1>
             <textarea class="entrada" pattern="[A-Za-z]"  placeholder="Ingrese su texto aquí..."></textarea>
-        
+            <a class="alert">solo se pueden ingresar letras minusculas</a>
             <button class ="Encriptar">Encriptar</button>
             <button class="Desencriptar">Desencriptar</button>
         </div>
         <div class="container_salida">
-            <textarea class="salida" placeholder="Texto de salida"></textarea>
-   
+            <textarea class="salida" readonly placeholder="Texto de salida"></textarea>   
             <button class="copiar">copiar</button>
         </div>
     </div>
 </body>
-<script>
-    const salida = document.querySelector('.salida');
-    const placeholder = document.querySelector('.placeholder');
-
-    salida.addEventListener('input', () => {
-        if (salida.value === '') {
-            placeholder.style.display = 'block';
-        } else {
-            placeholder.style.display = 'none';
-        }
-    });
-</script>
+<script src="script.js"></script>
 </html>

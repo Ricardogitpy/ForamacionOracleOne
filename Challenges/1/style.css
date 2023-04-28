@@ -1,5 +1,5 @@
 /* Default Styles */
-body {
+  body {
     background-color: #F3F5FC;
     font-family: Arial, sans-serif;
     margin: 0;
@@ -103,19 +103,24 @@ body {
     background-color: #0A3871;
     color: #FFFFFF;
     display: inline-block;
+    max-width: 200px; /* Establecer un ancho máximo para el botón */
     width: 48%;
+    word-wrap: break-word; /* Asegurarse de que el texto se ajuste automáticamente */
   }
   
   .Desencriptar {
     background-color: #F3F5FC;
     color: #0A3871;
     display: inline-block;
+    max-width: 200px; /* Establecer un ancho máximo para el botón */
     width: 48%;
     border: 1px solid #0A3871;
+    word-wrap: break-word; /* Asegurarse de que el texto se ajuste automáticamente */
   }
   
+  
   .salida {
-    width: 100%;
+    width: 165px;
     height: 300px;
     margin: 10px 0;
     padding: 10px;
@@ -152,7 +157,6 @@ body {
   .container {
     justify-content: space-between;
     margin-bottom: 0px;
-    
   }
   .container_salida {
     background-color: #FFFFFF;
@@ -163,6 +167,30 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 400px;
+    width: 450px;
     height: 400px;
+  }
+  .alert{
+    width: 205px;
+    height: 18px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    /* identical to box height, or 18px */
+
+
+    /* Gray/gray-400 */
+
+    color: #495057;
+
+    opacity: 0.8;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0
   }
